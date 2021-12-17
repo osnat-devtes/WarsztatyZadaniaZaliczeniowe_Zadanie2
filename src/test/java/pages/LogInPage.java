@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LogInPage extends BasePage{
-    LogInPage(WebDriver driver){
+    public LogInPage(WebDriver driver){
         super(driver);
     }
     @FindBy(xpath = "//*[@id=\"_desktop_user_info\"]/div/a/span")
@@ -20,10 +20,20 @@ public class LogInPage extends BasePage{
     @FindBy(xpath = "//*[@id=\"submit-login\"]")
     public WebElement sign_inButton;
 
+    @FindBy(xpath = "//*[@id=\"_desktop_user_info\"]/div/a[2]/span")
+    public WebElement firstAndLastName;
+
+    @FindBy(id = "category-3")
+    public WebElement clothesButton;
+
     public void logIn(String email, String password){
         signInButton.click();
         enterText(loginInput,email);
         enterText(passwordInput,password);
         sign_inButton.click();
+        clothesButton.click();
+    }
+    public String getFirstAndLastName(){
+        return firstAndLastName.getText();
     }
 }
