@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.concurrent.TimeUnit;
+
 public class BasePage {
     public WebDriver driver;
     public BasePage(WebDriver driver){
@@ -13,10 +15,11 @@ public class BasePage {
         PageFactory.initElements(driver, this);
     }
     public void enterText(WebElement element, String enteredText){
-        element.sendKeys(Keys.CONTROL + "A");
-        element.sendKeys(Keys.DELETE);
-        element.clear();
-        element.sendKeys(enteredText);
+        if(element.isDisplayed()) {
+            element.sendKeys(Keys.CONTROL + "A");
+            element.clear();
+            element.sendKeys(enteredText);
+        }
     }
 
     public void tickDropdownText(WebElement element, String enteredDropdownText){

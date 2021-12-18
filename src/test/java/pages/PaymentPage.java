@@ -9,7 +9,7 @@ public class PaymentPage extends BasePage{
         super(driver);
     }
 
-    @FindBy(xpath = "//*[@id=\"id-address-delivery-address-18209\"]/header/label/div")
+    @FindBy(xpath = "//*[@id=\"delivery-addresses\"]/article/header/label/div")
     public WebElement addressInfo;
 
     @FindBy(xpath = "//*[@id=\"checkout-addresses-step\"]/div/div/form/div[2]/button")

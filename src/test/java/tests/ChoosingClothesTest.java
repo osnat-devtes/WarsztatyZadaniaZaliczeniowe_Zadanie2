@@ -36,7 +36,6 @@ public class ChoosingClothesTest extends BaseTest{
         String sweaterSize = "M";
         String clothesQuantity = "5";
         chooseClothes.choosingSize(sweaterSize);
-        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         chooseClothes.choosingQuantity(clothesQuantity);
         chooseClothes.proceedToCheckout();
 
@@ -49,9 +48,9 @@ public class ChoosingClothesTest extends BaseTest{
         //Checking if we have the right address and confirming it
         PaymentPage paymentData = new PaymentPage(driver);
         String firstAndLastName = "Nata Testerska";
-        String address = "Flower Street 2/3";
-        String zipCode = "60123";
-        String city = "London";
+        String address = "Pretty Street 234";
+        String zipCode = "567890";
+        String city = "Edinburgh";
         String country = "United Kingdom";
         String phone = "345345621";
         String addressData = firstAndLastName+'\n'+address+'\n'+zipCode+'\n'+city+'\n'+country+'\n'+phone;
